@@ -13,3 +13,15 @@ Myself. hehe
 Date: 1/9/2023 - Prompt: Who was the most interesting person I interacted today?
 My friend.
  
+Date: 1/9/2023 - Prompt: Who was the most interesting person I interacted today?
+Myself
+ 
+Date: 1/9/2023 - Prompt: Who was the most interesting person I interacted today?
+Myself orayt
+ 
+Date: 1/9/2023 - Prompt: If I had one thing I could do over today, what would it be?
+Re-read my code.
+ 
+Date: 1/9/2023 - Prompt: How can I say I accomplished something today?
+I was able to convert my main program functions to classes in a separate file. 
+ 

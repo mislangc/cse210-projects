@@ -43,15 +43,7 @@ class Program
             }
 
         }
-        static void DisplayJournal(string filename)
-        {
-            string[] lines = System.IO.File.ReadAllLines(filename);
-
-            foreach  (string line in lines)
-            {
-                Console.WriteLine(line);
-            }
-        }
+        
         static string LoadJournal(string filename)
         {
             Console.Write("What is the filename? ");
@@ -66,34 +58,25 @@ class Program
             System.IO.File.Move(filename, newFileName);
             return newFileName;
         }
-        static int JournalChoices()
-        {
-            Console.WriteLine("Welcome to the Journal Program!");
-            Console.WriteLine("1. Write");
-            Console.WriteLine("2. Display");
-            Console.WriteLine("3. Load");
-            Console.WriteLine("4. Save");
-            Console.WriteLine("5. Quit");
-            Console.Write("What would you like to do? ");
-            string input = Console.ReadLine();
-            int choice = int.Parse(input);
-
-            return choice;
-        }
+        
         static void Journaling()
         {
             string fileName = "untitled.txt";
             int choice = 0;
             while (choice != 5)
                 {
-                choice = JournalChoices();
+
+                Menu m = new Menu();
+                choice = m.JournalChoices();
+                
                     if (choice == 1)
                     {
                         WriteOnJournal(fileName);
                     }
                     else if (choice == 2)
                     {
-                        DisplayJournal(fileName);
+                        Display d = new Display();
+                        d.DisplayJournal(fileName);
                     }
                     else if (choice == 3)
                     {
