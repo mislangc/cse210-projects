@@ -25,3 +25,6 @@ Re-read my code.
 Date: 1/9/2023 - Prompt: How can I say I accomplished something today?
 I was able to convert my main program functions to classes in a separate file. 
  
+Date: 1/9/2023 - Prompt: Where did I spend most of my time today?
+Coding in C# language.
+ 
