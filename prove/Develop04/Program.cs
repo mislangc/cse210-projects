@@ -4,6 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        int numberOfActivities = 0;
         int choice = 0;   
         while (choice != 4)
         {
@@ -50,6 +51,7 @@ class Program
                 Console.WriteLine(breathing.GetEndingMessage(duration));
                 breathing.ShowSpinner(6);
                 choice = 1;
+                numberOfActivities += 1;
                 Console.Clear();
             }
             else if (choice == 2)
@@ -90,6 +92,7 @@ class Program
                 Console.WriteLine(reflect.GetEndingMessage(duration));
                 reflect.ShowSpinner(6);
                 choice = 2;
+                numberOfActivities += 1;
                 Console.Clear();
             }
             else if (choice == 3)
@@ -137,6 +140,7 @@ class Program
                 Console.WriteLine(listing.GetEndingMessage(duration));
                 listing.ShowSpinner(6);
                 choice = 3;
+                numberOfActivities += 1;
                 Console.Clear();
             }
             else if (choice == 4)
@@ -150,6 +154,8 @@ class Program
                 Thread.Sleep(1000);
             }
         }
+        Console.WriteLine();
+        Console.WriteLine($"You did a total of {numberOfActivities} activities this session.");
         Console.WriteLine();
         Console.WriteLine("See you again!");
         
