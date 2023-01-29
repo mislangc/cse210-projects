@@ -1,0 +1,4 @@
+200
+Simple Goal,Wash the dishes,clean before sleeping,20,X
+Eternal Goal,Attend Church,every sunday,30,
+Checklist Goal,Play Hymns,Relax,15,,10,15,500

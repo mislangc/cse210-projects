@@ -10,3 +10,6 @@ Date: 1/9/2023 - Prompt: Who was the most interesting person I interacted today?
 Date: 1/9/2023 - Prompt: If I had one thing I could do over today, what would it be?
 Never slept.
  
+Date: 1/28/2023 - Prompt: How can I say I accomplished something today?
+I did great today.
+ 
