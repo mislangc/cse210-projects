@@ -3,9 +3,11 @@ using System;
 public class Menu
 {
     protected List<string> _options = new List<string>();
+    protected string _menuName;
 
     public Menu()
     {
+        _menuName = "-Main Menu-";
         _options.Add("1.Play");
         _options.Add("2.Save");
         _options.Add("3.Load");
@@ -19,7 +21,8 @@ public class Menu
 
     public void DisplayMenu() 
     {
-        Console.WriteLine("-Main Menu-");
+        Console.Clear();
+        Console.WriteLine(_menuName);
         foreach (string option in _options)
         {
             Console.WriteLine(option);

@@ -22,6 +22,9 @@ public class Load : Filename
         player.SetXp(int.Parse(parts[5]));
         player.SetWeaponAttack(int.Parse(parts[6]));
         player.SetWeaponName(parts[7]);
+        player.SetMaxHealth(int.Parse(parts[8]));
+        player.SetMaxXp(int.Parse(parts[9]));
+        player.SetHealthPotionCount(int.Parse(parts[10]));
         
     }
 }

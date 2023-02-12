@@ -14,7 +14,7 @@ public class Save : Filename
     {
         using (StreamWriter outputFile = new StreamWriter(_filename))
         {
-            outputFile.WriteLine($"{player.GetName()},{player.GetLevel()},{player.GetCoins()},{player.GetHealth()},{player.GetBaseAttack()},{player.GetXp()},{player.GetWeaponAttack()},{player.GetWeaponName()}");
+            outputFile.WriteLine($"{player.GetName()},{player.GetLevel()},{player.GetCoins()},{player.GetHealth()},{player.GetBaseAttack()},{player.GetXp()},{player.GetWeaponAttack()},{player.GetWeaponName()},{player.GetMaxHealth()},{player.GetMaxXp()},{player.GetHealthPotionCount()}");
         }
     }
 }
