@@ -216,7 +216,7 @@ public class Story
         spinner.ShowSpinner(4);
         Console.WriteLine("You get on your knees then stood up.");
         spinner.ShowSpinner(3);
-        Console.WriteLine("You found yourself locked in dark room");
+        Console.WriteLine("You found yourself locked in a dark room");
         spinner.ShowSpinner(4);
 
         Console.WriteLine("");
@@ -244,15 +244,256 @@ public class Story
         Console.Write("(Press Enter to continue)");
         Console.ReadLine();
         Console.Clear();
+    }
+    public void Tutorial()
+    {
+        Console.WriteLine("-Tutorial-");
+        spinner.ShowSpinner(4);
+        Console.WriteLine("From this point of the game you will be presented with choices.");
+        spinner.ShowSpinner(4);
+        Console.WriteLine("Your choices will determine how the story will proceed.");
+        spinner.ShowSpinner(4);
+        Console.WriteLine("And imagine you are in a square room.");
+        spinner.ShowSpinner(3);
+        Console.WriteLine("This will help you determine the directions that will be shown to you during the game.");
+        spinner.ShowSpinner(4);
+        Console.WriteLine("That's all you need to remember for now.");
+        spinner.ShowSpinner(3);
+        Console.WriteLine("Best of luck.");
+        spinner.ShowSpinner(3);
 
-        
+        Console.WriteLine("");
 
+        Console.Write("(Press Enter to continue)");
+        Console.ReadLine();
+        Console.Clear();
+    }
+    public void RoomOne()
+    {
+        Console.Write("'I have to get out of here.'");
+        spinner.ShowSpinner(3);
+        int action = 0;
+        string item = "";
+        string itemTitle = "";
+        string support = "";
+        bool doorChecked = false;
+        bool smallKeyTaken = false;
+        bool doorUnlocked = false;
+        bool cabinetChecked = false;
+        string left = "";
+        string right = "";
+        string front = "";
+        string back = "";
+        string frontAbove = "";
+        string lookAround = "1.Look Around";
+        while(action != 6)
+        {
+            Console.Clear();
+            Console.WriteLine("-Dark room-");
+            Console.WriteLine("");
+            Console.WriteLine(left);
+            Console.WriteLine(right);
+            Console.WriteLine(front);
+            Console.WriteLine(back);
+            Console.WriteLine(frontAbove);
+            Console.WriteLine("");
+            Console.WriteLine(lookAround);
+            Console.WriteLine($"{itemTitle} {item}");
+            Console.Write("What do you want to do? ");
+            string input = Console.ReadLine();
+            action = int.Parse(input);
 
-        
+            Console.WriteLine("");
 
+            if (action == 1)
+            {
+                Console.WriteLine("'There seems to be sacks of wheat to my left.'");
+                spinner.ShowSpinner(3);
+                Console.WriteLine("'Why would there be sacks of wheat here?'");
+                spinner.ShowSpinner(3);
+                Console.WriteLine("'There's a chair to my right.'");
+                spinner.ShowSpinner(3);
+                Console.WriteLine("'Behind me is just a wall.'");
+                spinner.ShowSpinner(3);
+                Console.WriteLine("'And there's a door in front of me.'");
+                spinner.ShowSpinner(3);
 
+                left = "2. Check the sacks";
+                right = "3. Chair";
+                front = "4. Door";
+                lookAround = "";
+            }
+            else if (action == 2)
+            {
+                if (item == "knife")
+                {
+                    Console.WriteLine("You used the knife to open the sacks.");
+                    spinner.ShowSpinner(3);
+                    Console.WriteLine("You poured out the wheat.");
+                    spinner.ShowSpinner(4);
+                    Console.WriteLine("You heard a metal sound drop.");
+                    spinner.ShowSpinner(3);
+                    Console.WriteLine("You checked it...");
+                    spinner.ShowSpinner(3);
+                    Console.WriteLine("You found a key.");
+                    spinner.ShowSpinner(3);
+                    Console.WriteLine("And now there's wheat everywhere.");
+                    spinner.ShowSpinner(3);
+                    Console.WriteLine("'How did the key even get there...'");
+                    spinner.ShowSpinner(4);
+                    item = "door key";
+                    left = "2. Wheats are everywhere";
+                }
+                else if (left == "2. Wheats are everywhere")
+                {
+                    Console.WriteLine("'I sure made a mess.'");
+                    spinner.ShowSpinner(3);
+                }
+                else
+                {
+                    Console.WriteLine("'There are a bunch of sacks.'");
+                    spinner.ShowSpinner(3);
+                    Console.WriteLine("'I wonder who and why left them here.'");
+                    spinner.ShowSpinner(3);
+                }
+            }
+            else if (action == 3)
+            {
+                if (doorChecked == true)
+                {
+                    Console.WriteLine("You take the chair.");
+                    spinner.ShowSpinner(3);
+                    support = "chair";
+                    right = "3. This is where the chair was.";
+                    doorChecked = false;
+                }
+                else if (cabinetChecked == true)
+                {
+                    Console.WriteLine("You decided to check the place where the chair was.");
+                    spinner.ShowSpinner(3);
+                    Console.WriteLine("You see something shiny on the floor.");
+                    spinner.ShowSpinner(3);
+                    Console.WriteLine("You checked and found a small key.");
+                    spinner.ShowSpinner(3);
+                    Console.WriteLine("'This must've been hidden below the chair's legs.'");
+                    spinner.ShowSpinner(3);
+                    item = "small key";
+                    itemTitle = "Item:";
+                    smallKeyTaken = true;
+                    cabinetChecked = false;
+                }
+                else if (smallKeyTaken == true)
+                {
+                    Console.WriteLine("'There's nothing here anymore.'");
+                    spinner.ShowSpinner(3);
+                }
+                else 
+                {
+                    Console.WriteLine("You checked the chair.");
+                    spinner.ShowSpinner(3);
+                    Console.WriteLine("You see nothing unusual.");
+                    spinner.ShowSpinner(3);
+                    Console.WriteLine("You tried to sit on it and relax a bit.");
+                    spinner.ShowSpinner(3);
+                    Console.WriteLine("Then you stood up.");
+                    spinner.ShowSpinner(3);
+                    Console.WriteLine("'Why did I even sat down.'");
+                    spinner.ShowSpinner(3);
+                }
+                
+            }
+            else if (action == 4)
+            {
+                if (doorUnlocked == true)
+                {
+                    Console.WriteLine("You leave the room.");
+                    spinner.ShowSpinner(3);
+                    Console.WriteLine("You escaped successfully.");
+                    spinner.ShowSpinner(3);
+                    Console.WriteLine("Thank you for playing the Story!");
+                    spinner.ShowSpinner(5);
+                    action = 6;
+                }
+                else if (item == "door key")
+                {
+                    Console.WriteLine("You used the key from the sacks...");
+                    spinner.ShowSpinner(3);
+                    Console.WriteLine("The door unlocked!");
+                    spinner.ShowSpinner(3);
+                    doorUnlocked = true;
+                    front = "4. Unlocked Door";
+                    item = "";
+                }
+                else if (item == "small key")
+                {
+                    Console.WriteLine("You used the small key to the door...");
+                    spinner.ShowSpinner(3);
+                    Console.WriteLine("'It doesn't work, it's too small for the keyhole.'");
+                    spinner.ShowSpinner(3);
+                }
+                else if (item == "knife")
+                {
+                    Console.WriteLine("You tried to use the knife on the door...");
+                    spinner.ShowSpinner(3);
+                    Console.WriteLine("'Nope.'");
+                    spinner.ShowSpinner(3);
+                }
+                else
+                {
+                Console.WriteLine("You checked the door...");
+                spinner.ShowSpinner(3);
+                Console.WriteLine("It's locked");
+                spinner.ShowSpinner(2);
+                Console.WriteLine("There's a keyhole on your side of the door.");
+                spinner.ShowSpinner(3);
+                Console.WriteLine("'If only there was a key.'");
+                spinner.ShowSpinner(3);
 
+                Console.WriteLine("You also noticed,");
+                spinner.ShowSpinner(2);
+                Console.WriteLine("there's a little cabinet attached to the wall above the door.");
+                spinner.ShowSpinner(3);
+                frontAbove = "5. Cabinet";
+                
+                }
+            }
+            else if (action == 5)
+            {
+                if (support == "chair")
+                {
+                    Console.WriteLine("You used the chair to reach the cabinet.");
+                    spinner.ShowSpinner(3);
+                    if (item == "small key")
+                    {
+                        Console.WriteLine("You used the small key.");
+                        spinner.ShowSpinner(3);
+                        Console.WriteLine("The cabinet opens.");
+                        spinner.ShowSpinner(3);
+                        Console.WriteLine("There's a knife inside.");
+                        spinner.ShowSpinner(3);
+                        Console.WriteLine("You took the knife.");
+                        spinner.ShowSpinner(3);
+                        item = "knife";
+                        frontAbove = "";
+                    }
+                    else 
+                    {
+                        Console.WriteLine("But the cabinet is locked.");
+                        spinner.ShowSpinner(3);
+                        cabinetChecked = true;
+                    }
+                    
+                }
+                else
+                {
+                    Console.WriteLine("The cabinet is too high to reach.");
+                    spinner.ShowSpinner(3);
+                    doorChecked = true;
+                }
+            }
+        }
 
 
     }
+    
 }

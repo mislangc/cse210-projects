@@ -40,7 +40,11 @@ class Program
                     if (decision == 1)
                     {
                         Story story = new Story();
-                        story.DisplayIntroduction();
+                        //story.DisplayIntroduction();
+                        //story.DisplayChapterOneTitle();
+                        //story.ChapterOne();
+                        //story.Tutorial();
+                        story.RoomOne();
                     }
                     else if (decision == 2)
                     {
